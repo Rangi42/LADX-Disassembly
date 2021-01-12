@@ -22,19 +22,21 @@ background_descriptors = [
             )
         ]
     ),
-
-    # TODO: The attributes are split into multiple areas where they are stored.
-    #  so we need to split the output into multiple files and make sure not to decode any code.
-    #  But we only need a single pointer list.
-    #BackgroundTableDescriptor(
-    #    name = 'attrmaps',
-    #    address = BANK(0x24) + 0x1C4B,
-    #    length = 0x4C,
-    #    data = BackgroundDescriptor(
-    #        address = BANK(0x24) + 0x1C97,
-    #        length = 0x203A
-    #    )
-    #)
+    BackgroundTableDescriptor(
+        name = 'attrmaps',
+        address = BANK(0x24) + 0x1C4B,
+        length = 0x4C,
+        data = [
+            BackgroundDescriptor(
+                address = BANK(0x24) + 0x1C97,
+                length = 0x174A
+            ),
+            BackgroundDescriptor(
+                address = BANK(0x24) + 0x3BA7,
+                length = 0x12A
+            )
+        ]
+    )
 ]
 
 background_names = [
